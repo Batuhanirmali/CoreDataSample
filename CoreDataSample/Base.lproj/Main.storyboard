@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" id="rXF-eM-K7o"/>
                     <connections>
                         <outlet property="tableView" destination="okC-Ut-oaS" id="V3u-fw-zgF"/>
-                        <segue destination="aMf-KA-grp" kind="show" identifier="secondVc" id="26i-Uy-jQE"/>
+                        <segue destination="aMf-KA-grp" kind="show" identifier="secondVC" id="26i-Uy-jQE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -93,12 +93,12 @@
                             <constraint firstItem="uFv-rG-eLa" firstAttribute="top" secondItem="1LH-4o-fRD" secondAttribute="bottom" constant="36" id="4Lg-NG-blS"/>
                             <constraint firstItem="kT7-rC-pwS" firstAttribute="leading" secondItem="DdX-AR-Eks" secondAttribute="leading" constant="76" id="5Vg-Ix-Udj"/>
                             <constraint firstItem="kT7-rC-pwS" firstAttribute="leading" secondItem="ZdX-Gv-gBr" secondAttribute="leading" id="AWd-AE-uiK"/>
-                            <constraint firstItem="VN4-L8-TIy" firstAttribute="top" secondItem="uFv-rG-eLa" secondAttribute="bottom" constant="73" id="FnY-cJ-2bN"/>
+                            <constraint firstItem="VN4-L8-TIy" firstAttribute="top" secondItem="uFv-rG-eLa" secondAttribute="bottom" constant="63" id="FnY-cJ-2bN"/>
                             <constraint firstItem="1LH-4o-fRD" firstAttribute="top" secondItem="ZdX-Gv-gBr" secondAttribute="bottom" constant="34" id="I7g-00-xAq"/>
                             <constraint firstItem="DdX-AR-Eks" firstAttribute="bottom" secondItem="VN4-L8-TIy" secondAttribute="bottom" constant="118" id="Kpk-Xw-s2R"/>
                             <constraint firstItem="1LH-4o-fRD" firstAttribute="trailing" secondItem="uFv-rG-eLa" secondAttribute="trailing" id="Ppk-sq-yCj"/>
                             <constraint firstItem="1LH-4o-fRD" firstAttribute="leading" secondItem="uFv-rG-eLa" secondAttribute="leading" id="XEk-Ap-UBb"/>
-                            <constraint firstItem="ZdX-Gv-gBr" firstAttribute="top" secondItem="kT7-rC-pwS" secondAttribute="bottom" constant="67" id="dIK-n2-22F"/>
+                            <constraint firstItem="ZdX-Gv-gBr" firstAttribute="top" secondItem="kT7-rC-pwS" secondAttribute="bottom" constant="77" id="dIK-n2-22F"/>
                             <constraint firstItem="kT7-rC-pwS" firstAttribute="top" secondItem="DdX-AR-Eks" secondAttribute="top" constant="45" id="fJf-dT-yPa"/>
                             <constraint firstItem="ZdX-Gv-gBr" firstAttribute="trailing" secondItem="1LH-4o-fRD" secondAttribute="trailing" id="jjY-M4-F2H"/>
                             <constraint firstItem="VN4-L8-TIy" firstAttribute="leading" secondItem="DdX-AR-Eks" secondAttribute="leading" constant="170" id="n7B-Ci-2ff"/>

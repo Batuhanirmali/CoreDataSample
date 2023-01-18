@@ -14,9 +14,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addItem))
         tableView.delegate = self
         tableView.dataSource = self
 
+    }
+    
+    @objc func addItem() {
+        performSegue(withIdentifier: "secondVC", sender: nil)
     }
 
 
