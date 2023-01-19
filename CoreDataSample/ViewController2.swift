@@ -45,8 +45,9 @@ class ViewController2: UIViewController {
         } catch {
             print("error")
         }
+        NotificationCenter.default.post(name: NSNotification.Name.init("newData"), object: nil)
+        self.navigationController?.popViewController(animated: true)
 
-        
     }
     
     @objc func imagetap() {
