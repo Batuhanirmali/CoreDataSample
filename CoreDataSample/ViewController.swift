@@ -89,4 +89,34 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         performSegue(withIdentifier: "secondVC", sender: nil)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Alldata")
+        
+        let idString = idArr[indexPath.row].uuidString
+        fetchRequest.returnsObjectsAsFaults = false
+        fetchRequest.predicate = NSPredicate(format: "id = %@", idString)
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject]{
+                if let _ = result.value(forKey: "id") as? UUID {
+                    context.delete(result)
+                    nameArr.remove(at: indexPath.row)
+                    idArr.remove(at: indexPath.row)
+                    self.tableView.reloadData()
+                    
+                    do {
+                        try context.save()
+                    } catch {
+                        
+                    }
+                }
+            }
+        } catch {
+            
+        }
+
+    }
 }
