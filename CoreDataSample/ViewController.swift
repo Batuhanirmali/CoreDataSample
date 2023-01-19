@@ -87,6 +87,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         sourceName = nameArr[indexPath.row]
         sourceId = idArr[indexPath.row]
         performSegue(withIdentifier: "secondVC", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
