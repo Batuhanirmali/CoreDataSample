@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     var nameArr = [String]()
     var idArr = [UUID]()
+    var sourceName = ""
+    var sourceId: UUID?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,6 +28,7 @@ class ViewController: UIViewController {
     }
     
     @objc func addItem() {
+        sourceName = ""
         performSegue(withIdentifier: "secondVC", sender: nil)
     }
     
@@ -55,6 +58,13 @@ class ViewController: UIViewController {
             
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "secondVC" {
+            let destinationVC = segue.destination as! ViewController2
+            destinationVC.targetName = sourceName
+            destinationVC.targetId = sourceId
+        }
+    }
 
 
 }
@@ -71,6 +81,12 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     }
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newData"), object: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        sourceName = nameArr[indexPath.row]
+        sourceId = idArr[indexPath.row]
+        performSegue(withIdentifier: "secondVC", sender: nil)
     }
     
 }
